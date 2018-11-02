@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Driver {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         int choice = 0;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         do {
@@ -11,11 +11,7 @@ public class Driver {
             System.out.println("1. Add a product");
             System.out.println("2. Add a customer");
             System.out.println("3. Quit");
-            try {
-                choice = Integer.parseInt(bufferedReader.readLine());
-            }catch (IOException e){
-                System.out.println("Cannot process input!!!");
-            }
+            choice = Integer.parseInt(bufferedReader.readLine());
             if(choice == 1){
                 String name = "";
                 String brand = "";
@@ -23,29 +19,13 @@ public class Driver {
                 double price = 0.0;
 
                 System.out.println("What is the name of the product?");
-                try {
-                    name = bufferedReader.readLine();
-                }catch (IOException e){
-                    System.out.println("Cannot process input!!!");
-                }
+                name = bufferedReader.readLine();
                 System.out.println("What is the brand of the product?");
-                try {
-                    brand = bufferedReader.readLine();
-                }catch (IOException e){
-                    System.out.println("Cannot process input!!!");
-                }
+                brand = bufferedReader.readLine();
                 System.out.println("What is the weight of the product?");
-                try {
-                    weight = Double.parseDouble(bufferedReader.readLine());
-                }catch (IOException e){
-                    System.out.println("Cannot process input!!!");
-                }
+                weight = Double.parseDouble(bufferedReader.readLine());
                 System.out.println("What is the price of the product?");
-                try {
-                    price = Double.parseDouble(bufferedReader.readLine());
-                }catch (IOException e){
-                    System.out.println("Cannot process input!!!");
-                }
+                price = Double.parseDouble(bufferedReader.readLine());
 
                 Product p = new Product(name, brand, weight, price);
 
@@ -58,23 +38,11 @@ public class Driver {
                 String phoneNumber = "";
 
                 System.out.println("What is the name of the customer?");
-                try {
-                    name = bufferedReader.readLine();
-                }catch (IOException e){
-                    System.out.println("Cannot process input!!!");
-                }
+                name = bufferedReader.readLine();
                 System.out.println("What is the address of the customer?");
-                try {
-                    address = bufferedReader.readLine();
-                }catch (IOException e){
-                    System.out.println("Cannot process input!!!");
-                }
+                address = bufferedReader.readLine();
                 System.out.println("What is the phone number of the customer?");
-                try {
-                    phoneNumber = bufferedReader.readLine();
-                }catch (IOException e){
-                    System.out.println("Cannot process input!!!");
-                }
+                phoneNumber = bufferedReader.readLine();
 
                 Customer c = new Customer(name, address, phoneNumber);
 
